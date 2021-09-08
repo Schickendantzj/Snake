@@ -1,0 +1,10 @@
+Best Player	1008541
+Jeroen	30396
+Player	29041
+Player1	28753
+John	28425
+Doe	27721
+Bob	27325
+Alice	26856
+Matt	26390
+Unnamed	10
