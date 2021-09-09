@@ -3,36 +3,43 @@ import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.util.Scanner;
 
+// Used to keep track of scores (saves file)
 public class Top10 {
+
 	private int[] score = new int[10];
 	private String[] name = new String[10];
-	public Top10(){
+
+	// On construct call retrieve the list
+	public Top10() {
 		retrieve();
 	}
-	public String show(){
+
+	// Returns a string of the top 10
+	public String show() {
 		String temp = "";
 		for (int x = 0; x < 10; x++){
 			temp +="\n" + (x + 1) + ".) " + name[x] + "   -    " + score[x];
 		}
 		return temp;
 	}
-	public void save(){
+
+	// Saves Top10 to file named "scores.txt"
+	public void save() {
 		sort();
 		PrintWriter output;
 		try {
 			output = new PrintWriter("scores.txt");
 			for (int x = 0; x < 10; x++){
 				output.println(name[x] + "\t" + score[x]);
-				
 			}
 			output.close();
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
 	}
-	public void retrieve(){
+
+	// Loads Top10 from file named "scores.txt"
+	public void retrieve() {
 		try {
 			Scanner reader = new Scanner(new File("scores.txt"));
 			String answer;
@@ -50,14 +57,18 @@ public class Top10 {
 		}
 		sort();
 	}
-	public void add(String Name, int Score){
-		sort();
+
+	// Kicks out bottom of the list if it is greater
+	public void add(String Name, int Score) {
+		sort(); // sort to make sure list is sorted
 		if (Score > score[9]){
 			score[9] = Score;
 			name[9] = Name;
 		}
 	}
-	public void sort(){
+
+	// Simple bubble sort on the scores
+	public void sort() {
 		for (int x = 0; x < 9; x++) {
 			for (int y = x + 1; y < 10; y++) {
 				if (score[x] < score[y]){

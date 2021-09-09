@@ -7,4 +7,4 @@ Doe	27721
 Bob	27325
 Alice	26856
 Matt	26390
-Unnamed	10
+New Player	922

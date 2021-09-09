@@ -1,3 +1,4 @@
+
 public class Main {
 
 	// Used to launch the StartFrame (game start GUI)

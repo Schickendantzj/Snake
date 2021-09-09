@@ -2,7 +2,7 @@ import java.awt.Color;
 import java.awt.event.KeyListener;
 import javax.swing.JFrame;
 
-public class GameFrame extends JFrame implements ActionClassListener{
+public class GameFrame extends JFrame implements ActionClassListener {
 
 	private GamePanel Game = new GamePanel(); // GamePanel holds all functions to run the game
 
@@ -26,6 +26,7 @@ public class GameFrame extends JFrame implements ActionClassListener{
 		setVisible(true);
 	}
 
+	// Implements ActionClassListener to return focus to the GameFrame after a popup/restart
 	@Override
 	public void EventFired() {
 		requestFocus();

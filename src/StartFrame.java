@@ -8,12 +8,12 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-public class StartFrame extends JFrame implements ActionListener{
+public class StartFrame extends JFrame implements ActionListener {
 
 	private JPanel BackgroundPanel = new JPanel(); // Used to display items in frame
 	private JButton Start = new JButton("Start"); // Start button to start game
 
-	public StartFrame(){
+	public StartFrame() {
 		// Initializes JFrame (self)
 		setLocation(0,0);
 		setSize(1000,1000);
@@ -59,7 +59,7 @@ public class StartFrame extends JFrame implements ActionListener{
 	}
 
 	// Used to show the Game GUI
-	public void start(){
+	public void start() {
 		setVisible(false);
 		GameFrame Game = new GameFrame();
 	}
